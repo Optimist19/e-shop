@@ -10,73 +10,6 @@ const initialState = {
 };
 
 
-
-export const firebaseLoginDetails = createAsyncThunk(
-  "firebaseAuth/firebaseLoginDetails",
-  async ({ email, password }) => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      const user = userCredential.user;
-      // console.log(user, "user");
-      // console.log(user.uid, "user Uid");
-      const userId = user.uid
-      const uid = user.providerId; 
-
-      const payload = { email, password, uid, userId };
-      // console.log(uid); 
-      // console.log("Async Thunk Payload:", payload);
-      return payload;
-    } catch (error) {
-   
-      console.log(error);
-      // toast.error("Kindly sign up");
-    }
-  }
-);
-
-export const signup = createAsyncThunk(
-  "firebaseAuth/signup",
-  ({ email, password }) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed up
-        const user = userCredential.user;
-        console.log(user);
-        const payload = {
-          email,
-          password
-        };
-        return payload;
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const payload = { errorMessage };
-        return payload;
-        // ..
-      });
-  }
-);
-
-export const signout = createAsyncThunk("firebaseAuth/signout", function () {
-  signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-      console.log("Sign-out successful");
-      toast("Sign-out successful");
-    })
-    .catch((error) => {
-      // An error happened.
-    });
-});
-
-
 const authSlice = createSlice({
   name: "authSlice",
   initialState,
@@ -123,6 +56,73 @@ const authSlice = createSlice({
         state.status = "error";
         state.error = action.payload.errorMessage;
       })
+});
+
+
+export const firebaseLoginDetails = createAsyncThunk(
+  "firebaseAuth/firebaseLoginDetails",
+  async ({ email, password }) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+      // console.log(user, "user");
+      // console.log(user.uid, "user Uid");
+      const userId = user.uid
+      const uid = user.providerId; 
+
+      const payload = { email, password, uid, userId };
+      // console.log(uid); 
+      // console.log("Async Thunk Payload:", payload);
+      return payload;
+    } catch (error) {
+   
+      console.log(error);
+      // toast.error("Kindly sign up");
+    }
+  }
+);
+
+
+export const signup = createAsyncThunk(
+  "firebaseAuth/signup",
+  ({ email, password }) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        console.log(user);
+        const payload = {
+          email,
+          password
+        };
+        return payload;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const payload = { errorMessage };
+        return payload;
+        // ..
+      });
+  }
+);
+
+export const signout = createAsyncThunk("firebaseAuth/signout", function () {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      console.log("Sign-out successful");
+      toast("Sign-out successful");
+    })
+    .catch((error) => {
+      // An error happened.
+    });
 });
 
 
