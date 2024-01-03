@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Products from "./components/Products";
 import Login from "./components/Login";
 import ProductsDetails from "./components/ProductsDetails";
@@ -31,9 +31,9 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       <Routes>
         <Route element={<AppLayout />}>
-          {/* <Route index replace element={<Navigate to="products" />} /> */}
           <Route element={<ProtectedRoutes />}>
-            <Route path="products" element={<Products />} />
+          {/* <Route index replace element={<Navigate to="products" />} /> */}
+            <Route path="/" element={<Products />} />
             <Route path="product-details/:id" element={<ProductsDetails />} />
             <Route path="cartlist" element={<SelectedItemCart />} />
           </Route>

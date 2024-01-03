@@ -16,7 +16,7 @@ function Login() {
 
   useEffect(() => {
     if (uid) {
-      navigate("/products");
+      navigate("/");
     }
   }, [uid, navigate]);
 
