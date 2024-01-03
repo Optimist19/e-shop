@@ -11,6 +11,7 @@ import PublicPage from "./components/PublicPage";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import SelectedItemCart from "./components/SelectedItemCart";
 import About from "./components/About";
+import PageNotFound from "./components/PageNotFound";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </QueryClientProvider>
   );
