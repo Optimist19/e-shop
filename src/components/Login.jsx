@@ -38,7 +38,7 @@ function Login() {
             placeholder="Password"
           />
           <input type="submit" className="btn" />
-          <Link to="/signup">Login</Link>
+          <Link to="/signup">Sign up</Link>
           <div className="back">
             <Back />
           </div>

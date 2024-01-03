@@ -41,7 +41,7 @@ function Products() {
                   </ul>
                 </Link>
                 <div className="product-btn">
-                  <button onClick={() => dispatch(selectItem(product))}>
+                  <button onClick={() => dispatch(selectItem(product))} disabled={product.quantity > 0 ? true : false}>
                     Add to cart
                   </button>
                 </div>

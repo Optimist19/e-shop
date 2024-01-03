@@ -16,8 +16,7 @@ import { TiSocialInstagram } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 import { increase, selectItem, substractItem } from "../store/cartSlice";
 import Back from "./Back";
-import Footer from "./Footer";
-import Nav from "./Nav";
+
 
 function ProductsDetails() {
   const { data } = useQuery(["products"], {
@@ -36,12 +35,6 @@ function ProductsDetails() {
 
   const toGetQuantity = obj?.quantity;
 
-  // useEffect(()=>{
-
-  //   if (toGetQuantity < 1) {
-  //     setDisable(true);
-  //   }
-  // },[toGetQuantity])
 
   console.log(toGetQuantity);
 
@@ -63,16 +56,16 @@ function ProductsDetails() {
 
   return (
     <>
-      {/* <Nav /> */}
+    
       <main className="dyn-prod-con">
-        <div>
+        <div className="dyn-con">
           <div key={details.id} className="detail-grid">
             <div className="dyn-img">
               <Back />
               <div>
                 <img src={details.images[0]} alt={details.title} />
               </div>
-              <img src={details.images[1]} alt={details.title} />
+              <img src={details.images[1]} alt={details.title} className="second-img"/>
             </div>
 
             <div className="dyn-details">
@@ -151,7 +144,6 @@ function ProductsDetails() {
           </div>
         </div>
       </main>
-      {/* <Footer /> */}
     </>
   );
 }

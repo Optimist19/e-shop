@@ -410,11 +410,20 @@ footer .btn button:hover {
 .detail-grid {
   margin: 6vh 6vw;
   display: grid;
+  gap: 0 3vw;
   grid-template-columns: 1fr 1fr;
 }
 
+/* .dyn-con{
+  width: 100%;
+} */
+
 .dyn-img img:first-child {
   width: 7vw;
+}
+
+.dyn-img .second-img{
+  width: 100%;
 }
 
 .dyn-img .back {
@@ -489,7 +498,6 @@ footer .btn button:hover {
   display: flex;
   align-items: center;
   font-size: 20px;
-  width: 11vw;
   padding: 1vh 1vw;
   border-radius: 9px;
 }
@@ -594,6 +602,43 @@ footer .btn button:hover {
 }
 
 @media screen and (max-width: 777px) {
+  .dyn-img .back {
+
+    font-size: 20px;
+
+  }
+  
+
+  
+  .dyn-details h5 {
+    font-size: 24px;
+
+  }
+  
+  .dyn-details .title {
+
+    font-size: 18px;
+  }
+  
+
+  
+  .dyn-details .price {
+
+    font-size: 20px;
+
+  }
+  .dyn-details .social {
+
+    font-size: 15px;
+
+  }
+  
+  .dyn-details a {
+
+    font-size: 25px;
+
+  }
+
   nav li {
     font-size: 16px;
   }
@@ -627,7 +672,101 @@ footer .btn button:hover {
   }
 }
 
+@media screen and (max-width: 734px) {
+ .dyn-details .img-det{
+gap: 0 6vw;
+  
+ }
+
+ .dyn-details .img-det div{
+  width: 9vw;
+ }
+
+ .dyn-img .back {
+
+  font-size: 20px;
+
+}
+
+
+
+.dyn-details h5 {
+  font-size: 22px;
+
+}
+
+.dyn-details .title {
+
+  font-size: 18px;
+}
+
+
+
+.dyn-details .price {
+
+  font-size: 16px;
+
+}
+.dyn-details .social {
+
+  font-size: 14px;
+
+}
+
+.dyn-details a {
+
+  font-size: 23px;
+
+}
+}
+
 @media screen and (max-width: 550px) {
+  .dyn-img .back {
+
+    font-size: 16px;
+
+  }
+  
+
+  
+  .dyn-details h5 {
+    font-size: 22px;
+
+  }
+  
+  .dyn-details .title {
+
+    font-size: 16px;
+  }
+  
+
+  
+  .dyn-details .price {
+
+    font-size: 17px;
+
+  }
+  .dyn-details .social {
+
+    font-size: 13px;
+
+  }
+  
+  .dyn-details a {
+
+    font-size: 20px;
+
+  }
+  .dyn-details .img-det{
+    gap: 0 9vw;
+      
+     
+    }
+
+    .dyn-details .img-det div{
+      width: 10vw;
+     }
+
   .footer-div {
     display: grid;
     gap: 2vh 0;
@@ -680,7 +819,49 @@ footer .btn button:hover {
     font-size: 15px;
   }
 }
+
+@media screen and (max-width: 481px) {
+  .dyn-details .img-det div p{
+    display: none;
+     }
+}
 @media screen and (max-width: 350px) {
+  .dyn-img .back {
+
+    font-size: 16px;
+
+  }
+  
+
+  
+  .dyn-details h5 {
+    font-size: 17px;
+
+  }
+  
+  .dyn-details .title {
+
+    font-size: 14px;
+  }
+  
+
+  
+  .dyn-details .price {
+
+    font-size: 16px;
+
+  }
+  .dyn-details .social {
+
+    font-size: 10px;
+
+  }
+  
+  .dyn-details a {
+
+    font-size: 18px;
+
+  }
   .form .form-input-con {
     width: 70vw;
   }
